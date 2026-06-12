@@ -1,0 +1,10 @@
+# Program to calculate sum of first N natural numbers
+
+# Input: number N
+N = int(input("Enter a positive integer: "))
+
+# Calculate sum using formula
+sum_natural = N * (N + 1) // 2
+
+# Output result
+print("Sum of first", N, "natural numbers is:", sum_natural)
