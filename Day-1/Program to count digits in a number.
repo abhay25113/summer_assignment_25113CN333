@@ -1,0 +1,10 @@
+# Program to count digits in a number
+
+# Input: number from user
+num = int(input("Enter a number: "))
+
+# Convert number to string and count length
+count = len(str(abs(num)))   # abs() handles negative numbers
+
+# Output result
+print("Number of digits in", num, "is:", count)
