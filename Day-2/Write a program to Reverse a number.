@@ -1,0 +1,21 @@
+# Program to reverse a number
+
+# Input: number from user
+num = int(input("Enter a number: "))
+
+# Initialize variables
+reverse = 0
+temp = abs(num)   # handle negative numbers
+
+# Loop to reverse digits
+while temp > 0:
+    digit = temp % 10
+    reverse = reverse * 10 + digit
+    temp //= 10
+
+# Preserve sign for negative numbers
+if num < 0:
+    reverse = -reverse
+
+# Output result
+print("Reverse of", num, "is:", reverse)
