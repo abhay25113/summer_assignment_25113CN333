@@ -1,0 +1,17 @@
+# Program to find product of digits of a number
+
+# Input: number from user
+num = int(input("Enter a number: "))
+
+# Initialize product
+product = 1
+temp = abs(num)   # handle negative numbers
+
+# Loop to multiply digits
+while temp > 0:
+    digit = temp % 10
+    product *= digit
+    temp //= 10
+
+# Output result
+print("Product of digits of", num, "is:", product)
