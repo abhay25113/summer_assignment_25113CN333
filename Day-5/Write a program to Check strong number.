@@ -1,0 +1,19 @@
+# Program to check Strong number
+
+import math
+
+num = int(input("Enter a number: "))
+
+sum = 0
+temp = num
+
+while temp > 0:
+    digit = temp % 10
+    sum += math.factorial(digit)   # factorial of each digit
+    temp //= 10
+
+# Check if Strong
+if num == sum:
+    print(num, "is a Strong number")
+else:
+    print(num, "is not a Strong number")
