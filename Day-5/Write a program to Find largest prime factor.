@@ -1,0 +1,28 @@
+# Program to find the largest prime factor
+
+def largest_prime_factor(n):
+    # Start with the smallest prime factor
+    largest = -1
+    
+    # Divide out factors of 2
+    while n % 2 == 0:
+        largest = 2
+        n //= 2
+    
+    # Check odd factors
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            largest = i
+            n //= i
+        i += 2
+    
+    # If n is still greater than 2, then it's prime
+    if n > 2:
+        largest = n
+    
+    return largest
+
+# Input from user
+num = int(input("Enter a number: "))
+print("Largest prime factor of", num, "is:", largest_prime_factor(num))
