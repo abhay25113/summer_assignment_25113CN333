@@ -1,0 +1,81 @@
+# Complete Mini Project: Student Record System using Arrays, Strings, and Functions
+
+# Arrays (lists) to store student data
+roll_nos = []
+names = []
+marks = []
+
+# Function to add a student
+def add_student():
+    roll = input("Enter Roll No: ")
+    name = input("Enter Name: ")
+    mark = int(input("Enter Marks: "))
+    roll_nos.append(roll)
+    names.append(name)
+    marks.append(mark)
+    print("Student added successfully.")
+
+# Function to view a student
+def view_student():
+    roll = input("Enter Roll No: ")
+    if roll in roll_nos:
+        idx = roll_nos.index(roll)
+        print(f"Roll: {roll_nos[idx]}, Name: {names[idx]}, Marks: {marks[idx]}")
+    else:
+        print("Student not found.")
+
+# Function to update marks
+def update_marks():
+    roll = input("Enter Roll No: ")
+    if roll in roll_nos:
+        idx = roll_nos.index(roll)
+        marks[idx] = int(input("Enter New Marks: "))
+        print("Marks updated successfully.")
+    else:
+        print("Student not found.")
+
+# Function to delete a student
+def delete_student():
+    roll = input("Enter Roll No: ")
+    if roll in roll_nos:
+        idx = roll_nos.index(roll)
+        roll_nos.pop(idx)
+        names.pop(idx)
+        marks.pop(idx)
+        print("Student deleted successfully.")
+    else:
+        print("Student not found.")
+
+# Function to show all students
+def show_all():
+    if len(roll_nos) == 0:
+        print("No records found.")
+    else:
+        print("\n--- Student Records ---")
+        for i in range(len(roll_nos)):
+            print(f"Roll: {roll_nos[i]}, Name: {names[i]}, Marks: {marks[i]}")
+
+# Main menu loop
+def main():
+    while True:
+        print("\n1. Add Student  2. View Student  3. Update Marks  4. Delete Student  5. Show All  6. Exit")
+        choice = int(input("Enter choice: "))
+
+        if choice == 1:
+            add_student()
+        elif choice == 2:
+            view_student()
+        elif choice == 3:
+            update_marks()
+        elif choice == 4:
+            delete_student()
+        elif choice == 5:
+            show_all()
+        elif choice == 6:
+            print("Exiting Student Record System. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+# Run the project
+main()
