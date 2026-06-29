@@ -1,0 +1,8 @@
+# Write a program to Find maximum frequency element.
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+max_elem = max(arr, key=lambda x: arr.count(x))
+print("Array:", arr)
+print("Element with maximum frequency:", max_elem)
+print("Frequency:", arr.count(max_elem))
