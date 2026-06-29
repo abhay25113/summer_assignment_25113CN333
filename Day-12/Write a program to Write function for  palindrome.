@@ -1,0 +1,8 @@
+# Program to Write function for palindrome. 
+
+def is_palindrome(s):
+    s = s.lower()
+    return s == s[::-1]
+
+text = input("Enter a word: ")
+print(text, "is a palindrome" if is_palindrome(text) else "is not a palindrome")
