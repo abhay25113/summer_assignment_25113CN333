@@ -1,0 +1,11 @@
+# Program to sort words by length
+
+sentence = "Python programming is fun and powerful"
+
+words = sentence.split()
+
+# Sort words by length
+sorted_words = sorted(words, key=len)
+
+print("Original sentence:", sentence)
+print("Words sorted by length:", sorted_words)
