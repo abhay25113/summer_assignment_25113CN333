@@ -1,0 +1,6 @@
+# Write a program to Second largest element.
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+unique_arr = sorted(set(arr))
+print("Second largest element:", unique_arr[-2] if len(unique_arr) > 1 else "Not available")
