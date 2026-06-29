@@ -1,0 +1,35 @@
+# Library Management System
+
+library = {}
+
+while True:
+    print("\n1. Add Book  2. View Book  3. Update Book  4. Delete Book  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        book_id = input("Book ID: ")
+        title = input("Title: ")
+        author = input("Author: ")
+        library[book_id] = {"title": title, "author": author}
+    elif choice == 2:
+        book_id = input("Book ID: ")
+        print(library.get(book_id, "Not found"))
+    elif choice == 3:
+        book_id = input("Book ID: ")
+        if book_id in library:
+            title = input("New Title (leave blank to skip): ")
+            author = input("New Author (leave blank to skip): ")
+            if title: library[book_id]["title"] = title
+            if author: library[book_id]["author"] = author
+        else:
+            print("Not found")
+    elif choice == 4:
+        book_id = input("Book ID: ")
+        library.pop(book_id, None)
+    elif choice == 5:
+        for bid, info in library.items():
+            print(f"ID: {bid}, Title: {info['title']}, Author: {info['author']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
