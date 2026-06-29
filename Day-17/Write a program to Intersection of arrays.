@@ -1,0 +1,14 @@
+# Write a program to Intersection of arrays. 
+
+n1 = int(input("Enter number of elements in first array: "))
+arr1 = [int(input(f"Enter element {i+1} of first array: ")) for i in range(n1)]
+
+n2 = int(input("Enter number of elements in second array: "))
+arr2 = [int(input(f"Enter element {i+1} of second array: ")) for i in range(n2)]
+
+intersection_arr = []
+for x in arr1:
+    if x in arr2 and x not in intersection_arr:
+        intersection_arr.append(x)
+
+print("Intersection of arrays:", intersection_arr)
