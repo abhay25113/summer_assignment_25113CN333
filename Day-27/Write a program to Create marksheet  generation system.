@@ -1,0 +1,43 @@
+# Marksheet Generation System
+
+students = {}
+
+while True:
+    print("\n1. Add Student  2. View Marksheet  3. Update Marks  4. Delete  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        roll = input("Roll No: ")
+        name = input("Name: ")
+        marks = {}
+        for subject in ["Math", "Science", "English"]:
+            marks[subject] = int(input(f"Enter marks for {subject}: "))
+        students[roll] = {"name": name, "marks": marks}
+    elif choice == 2:
+        roll = input("Roll No: ")
+        if roll in students:
+            s = students[roll]
+            print(f"Name: {s['name']}")
+            total = sum(s["marks"].values())
+            print("Marks:", s["marks"])
+            print("Total:", total, "Percentage:", total/3)
+        else:
+            print("Not found")
+    elif choice == 3:
+        roll = input("Roll No: ")
+        if roll in students:
+            subject = input("Subject: ")
+            marks = int(input("New Marks: "))
+            students[roll]["marks"][subject] = marks
+        else:
+            print("Not found")
+    elif choice == 4:
+        roll = input("Roll No: ")
+        students.pop(roll, None)
+    elif choice == 5:
+        for roll, info in students.items():
+            print(f"{roll}: {info['name']} - {info['marks']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
