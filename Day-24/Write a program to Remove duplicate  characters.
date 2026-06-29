@@ -1,0 +1,14 @@
+# Program to remove duplicate characters from a string
+
+string = "programming"
+
+result = ""
+seen = set()
+
+for char in string:
+    if char not in seen:
+        result += char
+        seen.add(char)
+
+print("Original string:", string)
+print("String without duplicates:", result)
