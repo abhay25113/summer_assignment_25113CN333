@@ -1,0 +1,8 @@
+# Write a program to Find pair with given sum.
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+target = int(input("Enter target sum: "))
+pairs = [(arr[i], arr[j]) for i in range(n) for j in range(i+1, n) if arr[i] + arr[j] == target]
+print("Array:", arr)
+print(f"Pairs with sum {target}:", pairs if pairs else "None")
