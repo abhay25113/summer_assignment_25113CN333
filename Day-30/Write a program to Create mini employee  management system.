@@ -1,0 +1,49 @@
+# Mini Employee Management System
+
+employees = []
+
+while True:
+    print("\n1. Add Employee  2. View Employee  3. Update Employee  4. Delete Employee  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        emp_id = input("Employee ID: ")
+        name = input("Name: ")
+        position = input("Position: ")
+        employees.append({"id": emp_id, "name": name, "position": position})
+        print("Employee added.")
+    elif choice == 2:
+        emp_id = input("Employee ID: ")
+        found = False
+        for emp in employees:
+            if emp["id"] == emp_id:
+                print(f"ID: {emp['id']}, Name: {emp['name']}, Position: {emp['position']}")
+                found = True
+        if not found:
+            print("Not found")
+    elif choice == 3:
+        emp_id = input("Employee ID: ")
+        for emp in employees:
+            if emp["id"] == emp_id:
+                emp["name"] = input("New Name: ")
+                emp["position"] = input("New Position: ")
+                print("Employee updated.")
+                break
+        else:
+            print("Not found")
+    elif choice == 4:
+        emp_id = input("Employee ID: ")
+        for emp in employees:
+            if emp["id"] == emp_id:
+                employees.remove(emp)
+                print("Employee deleted.")
+                break
+        else:
+            print("Not found")
+    elif choice == 5:
+        for emp in employees:
+            print(f"ID: {emp['id']}, Name: {emp['name']}, Position: {emp['position']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
