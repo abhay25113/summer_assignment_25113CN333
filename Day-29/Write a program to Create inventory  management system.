@@ -1,0 +1,42 @@
+# Inventory Management System
+
+inventory = {}
+
+while True:
+    print("\n1. Add Item  2. View Item  3. Update Item  4. Delete Item  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        item_id = input("Item ID: ")
+        name = input("Item Name: ")
+        qty = int(input("Quantity: "))
+        price = float(input("Price: "))
+        inventory[item_id] = {"name": name, "qty": qty, "price": price}
+        print("Item added.")
+    elif choice == 2:
+        item_id = input("Item ID: ")
+        print(inventory.get(item_id, "Not found"))
+    elif choice == 3:
+        item_id = input("Item ID: ")
+        if item_id in inventory:
+            qty = int(input("New Quantity: "))
+            price = float(input("New Price: "))
+            inventory[item_id]["qty"] = qty
+            inventory[item_id]["price"] = price
+            print("Item updated.")
+        else:
+            print("Not found")
+    elif choice == 4:
+        item_id = input("Item ID: ")
+        if item_id in inventory:
+            inventory.pop(item_id)
+            print("Item deleted.")
+        else:
+            print("Not found")
+    elif choice == 5:
+        for iid, info in inventory.items():
+            print(f"ID: {iid}, Name: {info['name']}, Qty: {info['qty']}, Price: {info['price']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
