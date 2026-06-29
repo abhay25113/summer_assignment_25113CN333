@@ -1,0 +1,31 @@
+# Ticket Booking System
+
+tickets = {}
+
+while True:
+    print("\n1. Book Ticket  2. View Ticket  3. Cancel Ticket  4. Show All  5. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        ticket_id = input("Ticket ID: ")
+        name = input("Passenger Name: ")
+        destination = input("Destination: ")
+        tickets[ticket_id] = {"name": name, "destination": destination}
+        print("Ticket booked.")
+    elif choice == 2:
+        ticket_id = input("Ticket ID: ")
+        print(tickets.get(ticket_id, "Not found"))
+    elif choice == 3:
+        ticket_id = input("Ticket ID: ")
+        if ticket_id in tickets:
+            tickets.pop(ticket_id)
+            print("Ticket cancelled.")
+        else:
+            print("Not found")
+    elif choice == 4:
+        for tid, info in tickets.items():
+            print(f"ID: {tid}, Name: {info['name']}, Destination: {info['destination']}")
+    elif choice == 5:
+        break
+    else:
+        print("Invalid choice")
