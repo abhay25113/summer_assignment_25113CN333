@@ -1,0 +1,41 @@
+# Bank Account System
+
+accounts = {}
+
+while True:
+    print("\n1. Create Account  2. View Balance  3. Deposit  4. Withdraw  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        acc_no = input("Account No: ")
+        name = input("Name: ")
+        balance = float(input("Initial Balance: "))
+        accounts[acc_no] = {"name": name, "balance": balance}
+    elif choice == 2:
+        acc_no = input("Account No: ")
+        acc = accounts.get(acc_no)
+        print(acc if acc else "Not found")
+    elif choice == 3:
+        acc_no = input("Account No: ")
+        if acc_no in accounts:
+            amount = float(input("Deposit Amount: "))
+            accounts[acc_no]["balance"] += amount
+        else:
+            print("Not found")
+    elif choice == 4:
+        acc_no = input("Account No: ")
+        if acc_no in accounts:
+            amount = float(input("Withdraw Amount: "))
+            if amount <= accounts[acc_no]["balance"]:
+                accounts[acc_no]["balance"] -= amount
+            else:
+                print("Insufficient balance")
+        else:
+            print("Not found")
+    elif choice == 5:
+        for acc_no, info in accounts.items():
+            print(f"Acc No: {acc_no}, Name: {info['name']}, Balance: {info['balance']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
