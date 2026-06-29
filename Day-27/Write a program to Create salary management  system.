@@ -1,0 +1,32 @@
+# Salary Management System
+
+employees = {}
+
+while True:
+    print("\n1. Add  2. View  3. Update  4. Delete  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        emp_id = input("Employee ID: ")
+        name = input("Name: ")
+        salary = float(input("Salary: "))
+        employees[emp_id] = {"name": name, "salary": salary}
+    elif choice == 2:
+        emp_id = input("Employee ID: ")
+        print(employees.get(emp_id, "Not found"))
+    elif choice == 3:
+        emp_id = input("Employee ID: ")
+        if emp_id in employees:
+            employees[emp_id]["salary"] = float(input("New Salary: "))
+        else:
+            print("Not found")
+    elif choice == 4:
+        emp_id = input("Employee ID: ")
+        employees.pop(emp_id, None)
+    elif choice == 5:
+        for eid, info in employees.items():
+            print(f"ID: {eid}, Name: {info['name']}, Salary: {info['salary']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
