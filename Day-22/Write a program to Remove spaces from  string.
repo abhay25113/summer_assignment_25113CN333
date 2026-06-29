@@ -1,0 +1,10 @@
+# Program to remove spaces from a string
+
+string = "Hello World, Welcome to Python!"
+
+no_spaces = ""
+for char in string:
+    if char != " ":
+        no_spaces += char
+
+print("String without spaces:", no_spaces)
