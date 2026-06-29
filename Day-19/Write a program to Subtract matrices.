@@ -1,0 +1,23 @@
+# Program to subtract two matrices
+
+A = [
+    [5, 7, 9],
+    [4, 6, 8],
+    [3, 2, 1]
+]
+
+B = [
+    [1, 2, 3],
+    [3, 2, 1],
+    [9, 8, 7]
+]
+
+result = [[0 for _ in range(len(A[0]))] for _ in range(len(A))]
+
+for i in range(len(A)):
+    for j in range(len(A[0])):
+        result[i][j] = A[i][j] - B[i][j]
+
+print("Resultant Matrix:")
+for row in result:
+    print(row)
