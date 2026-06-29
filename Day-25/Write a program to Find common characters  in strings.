@@ -1,0 +1,19 @@
+# Program to find common characters in two strings
+
+def common_characters(str1, str2):
+    # Convert strings to sets to remove duplicates
+    set1 = set(str1)
+    set2 = set(str2)
+    
+    # Find intersection
+    common = set1.intersection(set2)
+    
+    return common
+
+# Example usage
+string1 = "programming"
+string2 = "gaming"
+
+print("String 1:", string1)
+print("String 2:", string2)
+print("Common characters:", common_characters(string1, string2))
