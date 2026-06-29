@@ -1,0 +1,29 @@
+# Program to create a simple quiz application
+
+def quiz_app():
+    questions = {
+        "What is the capital of France?": "Paris",
+        "Which planet is known as the Red Planet?": "Mars",
+        "Who wrote 'Romeo and Juliet'?": "Shakespeare",
+        "What is the largest ocean on Earth?": "Pacific"
+    }
+    
+    score = 0
+    
+    print("===== Quiz Application =====")
+    
+    for question, answer in questions.items():
+        print("\n" + question)
+        user_answer = input("Your answer: ").strip()
+        
+        if user_answer.lower() == answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is {answer}.")
+    
+    print("\n===== Quiz Completed =====")
+    print(f"Your final score: {score}/{len(questions)}")
+
+# Run the quiz
+quiz_app()
