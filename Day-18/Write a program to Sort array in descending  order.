@@ -1,0 +1,5 @@
+# Write a program to Sort array in descending order. 
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+print("Array sorted in descending order:", sorted(arr, reverse=True))
