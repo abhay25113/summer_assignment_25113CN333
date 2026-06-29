@@ -1,0 +1,26 @@
+# Program to check if a matrix is symmetric
+
+A = [
+    [1, 2, 3],
+    [2, 5, 6],
+    [3, 6, 9]
+]
+
+rows = len(A)
+cols = len(A[0])
+
+is_symmetric = True
+
+if rows != cols:
+    is_symmetric = False
+else:
+    for i in range(rows):
+        for j in range(cols):
+            if A[i][j] != A[j][i]:
+                is_symmetric = False
+                break
+
+if is_symmetric:
+    print("The matrix is symmetric.")
+else:
+    print("The matrix is not symmetric.")
