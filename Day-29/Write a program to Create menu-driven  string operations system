@@ -1,0 +1,26 @@
+# String Operations System
+
+while True:
+    print("\n1. Length  2. Reverse  3. Uppercase  4. Lowercase  5. Concatenate  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        s = input("Enter string: ")
+        print("Length:", len(s))
+    elif choice == 2:
+        s = input("Enter string: ")
+        print("Reversed:", s[::-1])
+    elif choice == 3:
+        s = input("Enter string: ")
+        print("Uppercase:", s.upper())
+    elif choice == 4:
+        s = input("Enter string: ")
+        print("Lowercase:", s.lower())
+    elif choice == 5:
+        s1 = input("Enter first string: ")
+        s2 = input("Enter second string: ")
+        print("Concatenated:", s1 + s2)
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
