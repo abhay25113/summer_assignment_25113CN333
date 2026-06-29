@@ -1,0 +1,47 @@
+# Student Record Management System
+
+class StudentRecordSystem:
+    def __init__(self):
+        self.students = {}
+
+    def add(self, roll, name):
+        self.students[roll] = name
+
+    def view(self, roll):
+        print(self.students.get(roll, "Not found"))
+
+    def delete(self, roll):
+        if roll in self.students:
+            del self.students[roll]
+            print("Deleted")
+        else:
+            print("Not found")
+
+    def show_all(self):
+        for roll, name in self.students.items():
+            print(f"{roll}: {name}")
+
+
+# Example usage
+system = StudentRecordSystem()
+
+while True:
+    print("\n1. Add  2. View  3. Delete  4. Show All  5. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        roll = int(input("Roll No: "))
+        name = input("Name: ")
+        system.add(roll, name)
+    elif choice == 2:
+        roll = int(input("Roll No: "))
+        system.view(roll)
+    elif choice == 3:
+        roll = int(input("Roll No: "))
+        system.delete(roll)
+    elif choice == 4:
+        system.show_all()
+    elif choice == 5:
+        break
+    else:
+        print("Invalid choice")
