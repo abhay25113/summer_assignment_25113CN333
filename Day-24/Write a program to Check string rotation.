@@ -1,0 +1,21 @@
+# Program to check if one string is a rotation of another
+
+def is_rotation(str1, str2):
+    # If lengths are not equal, they can't be rotations
+    if len(str1) != len(str2):
+        return False
+    
+    # Concatenate str1 with itself
+    temp = str1 + str1
+    
+    # If str2 is a substring of temp, then it's a rotation
+    return str2 in temp
+
+# Example usage
+string1 = "rotation"
+string2 = "tationro"
+
+if is_rotation(string1, string2):
+    print("Strings are rotations of each other.")
+else:
+    print("Strings are not rotations of each other.")
