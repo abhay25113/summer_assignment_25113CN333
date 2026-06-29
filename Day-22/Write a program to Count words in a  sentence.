@@ -1,0 +1,15 @@
+# Program to count words in a sentence
+
+sentence = "Hello world, welcome to Python programming."
+
+count = 0
+in_word = False
+
+for char in sentence:
+    if char != " " and not in_word:
+        in_word = True
+        count += 1
+    elif char == " ":
+        in_word = False
+
+print("Number of words in the sentence:", count)
