@@ -1,0 +1,7 @@
+# Write a program to Find duplicates in array. 
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+duplicates = list(set([x for x in arr if arr.count(x) > 1]))
+print("Array:", arr)
+print("Duplicate elements:", duplicates if duplicates else "No duplicates found")
