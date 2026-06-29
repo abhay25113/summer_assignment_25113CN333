@@ -1,0 +1,12 @@
+# Program to convert lowercase letters to uppercase
+
+string = "Hello, World!"
+
+converted = ""
+for char in string:
+    if 'a' <= char <= 'z':
+        converted += chr(ord(char) - 32)
+    else:
+        converted += char
+
+print("Converted string:", converted)
