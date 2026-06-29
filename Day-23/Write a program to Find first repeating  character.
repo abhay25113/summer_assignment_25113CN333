@@ -1,0 +1,18 @@
+# Program to find the first repeating character in a string
+
+string = "programming"
+
+seen = set()
+first_repeating = None
+
+for char in string:
+    if char in seen:
+        first_repeating = char
+        break
+    else:
+        seen.add(char)
+
+if first_repeating:
+    print("First repeating character:", first_repeating)
+else:
+    print("No repeating character found.")
