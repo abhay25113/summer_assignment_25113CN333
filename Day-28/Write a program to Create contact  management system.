@@ -1,0 +1,41 @@
+# Contact Management System
+
+contacts = {}
+
+while True:
+    print("\n1. Add Contact  2. View Contact  3. Update Contact  4. Delete Contact  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        cid = input("Contact ID: ")
+        name = input("Name: ")
+        phone = input("Phone: ")
+        contacts[cid] = {"name": name, "phone": phone}
+        print("Contact added.")
+    elif choice == 2:
+        cid = input("Contact ID: ")
+        print(contacts.get(cid, "Not found"))
+    elif choice == 3:
+        cid = input("Contact ID: ")
+        if cid in contacts:
+            name = input("New Name (leave blank to skip): ")
+            phone = input("New Phone (leave blank to skip): ")
+            if name: contacts[cid]["name"] = name
+            if phone: contacts[cid]["phone"] = phone
+            print("Contact updated.")
+        else:
+            print("Not found")
+    elif choice == 4:
+        cid = input("Contact ID: ")
+        if cid in contacts:
+            contacts.pop(cid)
+            print("Contact deleted.")
+        else:
+            print("Not found")
+    elif choice == 5:
+        for cid, info in contacts.items():
+            print(f"ID: {cid}, Name: {info['name']}, Phone: {info['phone']}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
