@@ -1,0 +1,7 @@
+# Write a program to Rotate array left.
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+k = int(input("Enter number of positions to rotate left: ")) % n
+print("Original array:", arr)
+print("Array after left rotation:", arr[k:] + arr[:k])
