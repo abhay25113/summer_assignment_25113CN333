@@ -1,0 +1,20 @@
+# Write a program to Binary search. 
+
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+target = int(input("Enter element to search: "))
+
+result = binary_search(arr, target)
+print("Element found at position:", result+1 if result != -1 else "Not found")
