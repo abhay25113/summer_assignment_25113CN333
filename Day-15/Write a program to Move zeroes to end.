@@ -1,0 +1,7 @@
+# Write a program to Move zeroes to end. 
+
+n = int(input("Enter number of elements: "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n)]
+result = [x for x in arr if x != 0] + [0] * arr.count(0)
+print("Original array:", arr)
+print("Array after moving zeroes to end:", result)
