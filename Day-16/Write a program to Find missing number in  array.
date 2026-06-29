@@ -1,0 +1,6 @@
+# Write a program to Find missing number in array. 
+
+n = int(input("Enter the value of n (range 1 to n): "))
+arr = [int(input(f"Enter element {i+1}: ")) for i in range(n-1)]
+missing_number = n * (n + 1) // 2 - sum(arr)
+print("Missing number is:", missing_number)
