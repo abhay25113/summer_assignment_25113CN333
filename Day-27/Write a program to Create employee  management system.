@@ -1,0 +1,63 @@
+# Employee Management System
+
+class EmployeeManagement:
+    def __init__(self):
+        self.employees = {}
+
+    def add(self, emp_id, name, position):
+        self.employees[emp_id] = {"name": name, "position": position}
+        print("Employee added.")
+
+    def view(self, emp_id):
+        emp = self.employees.get(emp_id)
+        print(emp if emp else "Not found")
+
+    def update(self, emp_id, name=None, position=None):
+        if emp_id in self.employees:
+            if name: self.employees[emp_id]["name"] = name
+            if position: self.employees[emp_id]["position"] = position
+            print("Employee updated.")
+        else:
+            print("Not found")
+
+    def delete(self, emp_id):
+        if emp_id in self.employees:
+            del self.employees[emp_id]
+            print("Employee deleted.")
+        else:
+            print("Not found")
+
+    def show_all(self):
+        for emp_id, info in self.employees.items():
+            print(f"ID: {emp_id}, Name: {info['name']}, Position: {info['position']}")
+
+
+# Example usage
+system = EmployeeManagement()
+
+while True:
+    print("\n1. Add  2. View  3. Update  4. Delete  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        emp_id = int(input("Employee ID: "))
+        name = input("Name: ")
+        position = input("Position: ")
+        system.add(emp_id, name, position)
+    elif choice == 2:
+        emp_id = int(input("Employee ID: "))
+        system.view(emp_id)
+    elif choice == 3:
+        emp_id = int(input("Employee ID: "))
+        name = input("New Name (leave blank to skip): ")
+        position = input("New Position (leave blank to skip): ")
+        system.update(emp_id, name if name else None, position if position else None)
+    elif choice == 4:
+        emp_id = int(input("Employee ID: "))
+        system.delete(emp_id)
+    elif choice == 5:
+        system.show_all()
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
