@@ -1,0 +1,25 @@
+# Program to find the maximum occurring character in a string
+
+string = "programming"
+
+frequency = {}
+
+# Count frequency of each character
+for char in string:
+    if char != " ":  # ignoring spaces
+        if char in frequency:
+            frequency[char] += 1
+        else:
+            frequency[char] = 1
+
+# Find the character with maximum frequency
+max_char = None
+max_freq = 0
+
+for char, freq in frequency.items():
+    if freq > max_freq:
+        max_freq = freq
+        max_char = char
+
+print("Maximum occurring character:", max_char)
+print("Frequency:", max_freq)
