@@ -1,0 +1,10 @@
+# Program to sort names alphabetically
+
+names = ["Zara", "John", "Alice", "Bob", "Charlie"]
+
+# Sort the list
+names.sort()
+
+print("Names sorted alphabetically:")
+for name in names:
+    print(name)
