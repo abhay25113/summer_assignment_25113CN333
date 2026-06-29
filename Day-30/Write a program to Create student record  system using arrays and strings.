@@ -1,0 +1,50 @@
+# Student Record System using Arrays and Strings
+
+students = []   # array to store student names
+roll_nos = []   # array to store roll numbers
+marks = []      # array to store marks
+
+while True:
+    print("\n1. Add Student  2. View Student  3. Update Marks  4. Delete Student  5. Show All  6. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        roll = input("Roll No: ")
+        name = input("Name: ")
+        mark = int(input("Marks: "))
+        roll_nos.append(roll)
+        students.append(name)
+        marks.append(mark)
+        print("Student added.")
+    elif choice == 2:
+        roll = input("Roll No: ")
+        if roll in roll_nos:
+            idx = roll_nos.index(roll)
+            print(f"Roll: {roll_nos[idx]}, Name: {students[idx]}, Marks: {marks[idx]}")
+        else:
+            print("Not found")
+    elif choice == 3:
+        roll = input("Roll No: ")
+        if roll in roll_nos:
+            idx = roll_nos.index(roll)
+            marks[idx] = int(input("New Marks: "))
+            print("Marks updated.")
+        else:
+            print("Not found")
+    elif choice == 4:
+        roll = input("Roll No: ")
+        if roll in roll_nos:
+            idx = roll_nos.index(roll)
+            roll_nos.pop(idx)
+            students.pop(idx)
+            marks.pop(idx)
+            print("Student deleted.")
+        else:
+            print("Not found")
+    elif choice == 5:
+        for i in range(len(students)):
+            print(f"Roll: {roll_nos[i]}, Name: {students[i]}, Marks: {marks[i]}")
+    elif choice == 6:
+        break
+    else:
+        print("Invalid choice")
