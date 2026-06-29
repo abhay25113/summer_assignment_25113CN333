@@ -1,0 +1,39 @@
+# Mini Library System
+
+library = []
+
+while True:
+    print("\n1. Add Book  2. View Book  3. Delete Book  4. Show All  5. Exit")
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        book_id = input("Book ID: ")
+        title = input("Title: ")
+        author = input("Author: ")
+        library.append({"id": book_id, "title": title, "author": author})
+        print("Book added.")
+    elif choice == 2:
+        book_id = input("Book ID: ")
+        found = False
+        for book in library:
+            if book["id"] == book_id:
+                print(f"ID: {book['id']}, Title: {book['title']}, Author: {book['author']}")
+                found = True
+        if not found:
+            print("Not found")
+    elif choice == 3:
+        book_id = input("Book ID: ")
+        for book in library:
+            if book["id"] == book_id:
+                library.remove(book)
+                print("Book deleted.")
+                break
+        else:
+            print("Not found")
+    elif choice == 4:
+        for book in library:
+            print(f"ID: {book['id']}, Title: {book['title']}, Author: {book['author']}")
+    elif choice == 5:
+        break
+    else:
+        print("Invalid choice")
